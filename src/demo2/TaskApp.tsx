@@ -51,6 +51,7 @@ export function Demo() {
     featureDueDate,
   ];
 
+  // featureにないものはカラムとしても消す
   const filteredColumns = columns.filter((c) =>
     features.some((f) => f.id === c.id)
   );
