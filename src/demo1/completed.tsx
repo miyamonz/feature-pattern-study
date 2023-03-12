@@ -31,12 +31,3 @@ export const SelectCompletedCondition = () => {
   );
 };
 
-export const ItemCompleted: React.FC<{ task: Task }> = ({ task }) => (
-  <input
-    type="checkbox"
-    checked={task.completed}
-    onChange={(e) => {
-      // setTask({ ...task, completed: e.target.checked });
-    }}
-  />
-);

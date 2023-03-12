@@ -27,15 +27,3 @@ export const SelectPriorityCondition = () => {
   );
 };
 
-export const ItemPriority: React.FC<{ task: Task }> = ({ task }) => {
-  const m = {
-    high: "🔥",
-    medium: "🌟",
-    low: "🌱",
-  };
-  return (
-    <>
-      {task.priority} {(task.priority && m[task.priority]) ?? ""}
-    </>
-  );
-};

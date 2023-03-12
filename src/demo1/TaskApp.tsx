@@ -5,16 +5,8 @@ import { atom, useAtom } from "jotai";
 import { initialTasks } from "../common/Task";
 import { TaskItem } from "./TaskItem";
 
-import {
-  filterByCompletedFnAtom,
-  ItemCompleted,
-  SelectCompletedCondition,
-} from "./completed";
-import {
-  filterByPriorityFnAtom,
-  ItemPriority,
-  SelectPriorityCondition,
-} from "./priority";
+import { filterByCompletedFnAtom, SelectCompletedCondition } from "./completed";
+import { filterByPriorityFnAtom, SelectPriorityCondition } from "./priority";
 
 const tasksAtom = atom(initialTasks);
 
@@ -34,6 +26,7 @@ function TaskApp() {
 
   return (
     <>
+      {/* filter condition */}
       <div>
         <Box p={2}>
           <SelectCompletedCondition />
@@ -51,14 +44,7 @@ function TaskApp() {
 
         {/* tasks */}
         {filteredTasks.map((task) => (
-          <TaskItem
-            key={task.id}
-            task={task}
-            components={{
-              Completed: ItemCompleted,
-              Priority: ItemPriority,
-            }}
-          />
+          <TaskItem key={task.id} task={task} />
         ))}
 
         {/* button */}
