@@ -1,4 +1,4 @@
-import { Box, Select, Stack } from "@chakra-ui/react";
+import { Select } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 import { atomWithLocation } from "jotai-location";
 
@@ -7,7 +7,7 @@ export function usePath() {
   const [location] = useAtom(locationAtom);
   return location.pathname;
 }
-export function Router() {
+export function RouteSelect() {
   const [, setLocation] = useAtom(locationAtom);
   return (
     <Select
